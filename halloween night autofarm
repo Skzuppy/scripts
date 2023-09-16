@@ -1,0 +1,47 @@
+local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+local tricks = {
+    "Zombie",
+    "Ghost",
+    "Pumpkin",
+    "Spider",
+    "Bat"
+}
+
+    for _, v in pairs(workspace:GetChildren()) do
+        if v.Name == "House" and not v:FindFirstChild("HouseNPC") then
+            local doorbell = v.DoorBell
+            root.CFrame = CFrame.new(Vector3.new(doorbell.Position.X, doorbell.Position.Y + 1, doorbell.Position.Z + -1))
+            wait(0.5)
+            while not v:FindFirstChild("HouseNPC") do
+                fireclickdetector(doorbell.ClickDetector)
+                for _, trick in pairs(tricks) do
+                    if v:FindFirstChild(trick) then
+                        local trickpart = v[trick]
+                        root.Parent.Humanoid.Health = 0
+                        wait(6)
+                        if trickpart:FindFirstChild("HumanoidRootPart") then
+                        root.CFrame = CFrame.new(trickpart.HumanoidRootPart.Position)
+                        else
+                         root.CFrame = CFrame.new(trickpart.Position)
+                        end
+                    end
+                end
+                wait()
+             end
+            wait(4)
+            root.CFrame = CFrame.new(v.HouseNPC.HumanoidRootPart.Position)
+            wait(1)
+            for _, candy in pairs(workspace:GetChildren()) do
+                if candy.Name == "Candy" then
+                    local calc = (root.Position - candy.Position).Magnitude
+                    if calc < 20 then
+                        fireclickdetector(candy.ClickDetector)
+                    end
+                end
+            end
+
+            wait(5)
+
+        end
+    end
+
