@@ -1,4 +1,5 @@
 local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+local TeleportService = game:GetService("TeleportService")
 local tricks = {
     "Zombie",
     "Ghost",
@@ -16,14 +17,7 @@ local tricks = {
                 fireclickdetector(doorbell.ClickDetector)
                 for _, trick in pairs(tricks) do
                     if v:FindFirstChild(trick) then
-                        local trickpart = v[trick]
-                        root.Parent.Humanoid.Health = 0
-                        wait(6)
-                        if trickpart:FindFirstChild("HumanoidRootPart") then
-                        root.CFrame = CFrame.new(trickpart.HumanoidRootPart.Position)
-                        else
-                         root.CFrame = CFrame.new(trickpart.Position)
-                        end
+                       TeleportService:Teleport(1046190774)
                     end
                 end
                 wait()
