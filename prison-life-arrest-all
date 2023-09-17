@@ -1,5 +1,6 @@
 local plr = game.Players.LocalPlayer
 
+
 if plr.Team ~= "Guards" then
     local args = {[1] = "Bright blue"}
     workspace:WaitForChild("Remote"):WaitForChild("TeamEvent"):FireServer(unpack(args))
@@ -16,9 +17,12 @@ for _,v in pairs(game.Players:GetChildren()) do
             workspace:WaitForChild("Remote"):WaitForChild("arrest"):InvokeServer(unpack(args))
             local args = {[1] = v.Character["Left Arm"] }
              workspace:WaitForChild("Remote"):WaitForChild("ItemHandler"):InvokeServer(unpack(args))
+             if plr.Character.Humanoid.Sit == true then
+                plr.Character.Humanoid.Sit = false
+            end
             until v.Character.Head:FindFirstChild("handcuffedGui")
-            
-            wait(1)
+
+            wait(0.5)
         end
     end
 end
