@@ -1,3 +1,5 @@
+print("HI")
+
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/scripts/main/th_test"))()]])
 
 --pcall(function()
@@ -530,7 +532,9 @@ if _G.config.lowgraphics then
 	end
 end
 
-
+repeat 
+    wait()
+until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") 
 
 StatsReset.Activated:Connect(function()
     if isfile("farmComms.json") then
@@ -858,7 +862,7 @@ end)
 if _G.config.hidename then
     update("Buying mask")
     repeat
-    char.HumanoidRootPart.CFrame = CFrame.new(workspace.Ignored.Shop["[Surgeon Mask] - $27"].Head.Position + Vector3.new(0,3,0))
+    char:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(workspace.Ignored.Shop["[Surgeon Mask] - $27"].Head.Position + Vector3.new(0,3,0))
     fireclickdetector(workspace.Ignored.Shop["[Surgeon Mask] - $27"].ClickDetector)
     wait()
     until lp.Backpack:FindFirstChild("[Mask]")
