@@ -1,4 +1,4 @@
-print("hellooo")
+print("parsp[arspsr]")
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/scripts/main/th_test"))()]])
 
@@ -6,6 +6,7 @@ queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/S
 
 if not isfile("farmConfig.json") then
     print("Creating configuration file...")
+    wait(3)
     local hidenameX = _G.config.hidename
     local lowgraphicsX = _G.config.lowgraphics
     local fpscapX = _G.config.fpscap
@@ -32,6 +33,7 @@ if not isfile("farmConfig.json") then
     print("DONE")
 else
     print("Reading configuration file...")
+    wait(3)
     local configData = game:GetService("HttpService"):JSONDecode(readfile("farmConfig.json"))
     print("Config data read:")
     for key, value in pairs(configData) do
