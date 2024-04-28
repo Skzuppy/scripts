@@ -1,4 +1,4 @@
-print("HI")
+print("HIfsdf")
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/scripts/main/th_test"))()]])
 
@@ -862,8 +862,10 @@ end)
 if _G.config.hidename then
     update("Buying mask")
     repeat
+        if char and char:FindFirstChild("HumanoidRootPart") then
     char:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(workspace.Ignored.Shop["[Surgeon Mask] - $27"].Head.Position + Vector3.new(0,3,0))
     fireclickdetector(workspace.Ignored.Shop["[Surgeon Mask] - $27"].ClickDetector)
+        end
     wait()
     until lp.Backpack:FindFirstChild("[Mask]")
     lp.Backpack:FindFirstChild("[Mask]").Parent = char
