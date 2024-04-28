@@ -1,4 +1,4 @@
-print("qwe0ujiqweui09oqewioyuwq")
+print("hellooo")
 
 queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/scripts/main/th_test"))()]])
 
@@ -94,10 +94,11 @@ function SendMessage(url, message)
     function getMoney()
         repeat 
             wait()
-        until game.Players.LocalPlayer:FindFirstChild("DataFolder"):FindFirstChild("Currency").Value
-
+        until game.Players.LocalPlayer:FindFirstChild("DataFolder") and game.Players.LocalPlayer.DataFolder:FindFirstChild("Currency")
+        wait()
         return game.Players.LocalPlayer.DataFolder.Currency.Value
     end
+    
 
 local doingsomething = false
 local lp = game.Players.LocalPlayer
