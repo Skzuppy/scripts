@@ -122,3 +122,109 @@ local Toggle = Tabs.Antifling:AddToggle("ExtraSafe",
     end 
 })
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+local Toggle = Tabs.Antivoid:AddToggle("Antivoid", 
+{
+    Title = "Anti Void", 
+    Description = "Saves you from falling by teleporting you to the map if you get flung or fall.",
+    Default = false,
+    Callback = function(Value)
+        antivoid = Value
+    end 
+})
+local Toggle = Tabs.Antivoid:AddToggle("AVFeature", 
+{
+    Title = "(ANTIVOID FEATURE) Teleport to the last person that slapped you", 
+    Description = "When you fall in the void, the script will TP you slighly above the player that last hit you instead of the middle of the map. (Only works if player is in the arena)",
+    Default = false,
+    Callback = function(Value)
+        antivoidtplast = Value
+    end 
+})
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+local Toggle = Tabs.Misc:AddToggle("StaffDetection", 
+{
+    Title = "Staff Detection", 
+    Description = "Kicks you from the game if a staff member joins and saves the server JobId to your exploits workspace folder incase you want to rejoin.",
+    Default = false,
+    Callback = function(Value)
+        staffdetect = Value
+    end 
+})
+local Slider = Tabs.Misc:AddSlider("WalkSpeed", 
+{
+    Title = "WalkSpeed",
+    Description = "Change your player walkspeed. Breaks on death.",
+    Default = 16,
+    Min = 16,
+    Max = 1000,
+    Rounding = 1,
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end
+})
+local Slider = Tabs.Misc:AddSlider("JumpPower", 
+{
+    Title = "Jump Power",
+    Description = "Change your player Jump Power. Breaks on death.",
+    Default = 50,
+    Min = 50,
+    Max = 300,
+    Rounding = 1,
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end
+})
+local Toggle = Tabs.Misc:AddToggle("StaffDetection", 
+{
+    Title = "Debug Logs", 
+    Description = "Prints what the script is doing to the console and specific information. No use for the average player.",
+    Default = false,
+    Callback = function(Value)
+        debug = Value
+    end 
+})
+Tabs.Misc:AddButton({
+    Title = "Execute Infinite Yield",
+    Description = "",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+})
+local TpDropdown = Tabs.Misc:AddDropdown("Dropdown", {
+    Title = "Teleport",
+    Description = "Teleport to places",
+    Values = {"None", "Lobby", "Canon", "Arena", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
+    Multi = false,
+    Default = 1,
+})
+TpDropdown:OnChanged(function(Value)
+    print("Dropdown teleport changed:", Value)
+    if Value == "Arena" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6, -5, -11)
+    elseif Value == "Lobby" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801, 328, -7)
+    elseif Value == "Cannon" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(261, 34, 195)
+    end
+
+end)
+Tabs.Misc:AddButton({
+    Title = "Suicide (Reset)",
+    Description = "you have so much to live for dont do it",
+    Callback = function()
+        game:GetService("Players").LocalPlayer:WaitForChild("Reset"):FireServer()
+    end
+})
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tabs.Changelog:AddParagraph({"1/09/24","added new aura option and staff detection"})
+Tabs.Changelog:AddParagraph({"1/09/24","decreased aura range (game limits)"}) 
+Tabs.Changelog:AddParagraph({"1/09/24","forgehub is BACK"}) 
+Tabs.Changelog:AddParagraph({"28/04/24","New hitreg checks"}) 
+Tabs.Changelog:AddParagraph({"25/03/24","Added some aura checks to avoid hitting players who wouldnt be ragdolled even if you hit them"}) 
+Tabs.Changelog:AddParagraph({"23/03/24","Tempoarily removed 'Attack whilst not holding glove' toggle"}) 
+Tabs.Changelog:AddParagraph({"23/03/24","Fixed checks for slapaura"}) 
+Tabs.Changelog:AddParagraph({""}) 
+Tabs.Changelog:AddParagraph({"This UI is apart of Forge Hub as of 22/04/24"}) 
+Tabs.Changelog:AddParagraph({"23/03/24","Report all bugs to skupp_y on Discord or on the V3RM thread"}) 
+Tabs.Changelog:AddParagraph({"23/03/24","OFFICIAL RELEASE"})
