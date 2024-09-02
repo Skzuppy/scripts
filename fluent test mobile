@@ -63,7 +63,7 @@ local Toggle = Tabs.Main:AddToggle("ShowRange",
 {
     Title = "Show Range", 
     Description = "Shows your attack range visually",
-    Default = false
+    Default = false,
     Callback = function(Value)
         visualizertoggle = Value
     end 
@@ -89,7 +89,7 @@ local Toggle = Tabs.Antifling:AddToggle("AntiFling",
 {
     Title = "Godmode", 
     Description = "Complete Godmode. Use method 2 if it does not work and report it in the Discord. Avoids insta-kill gloves.",
-    Default = false
+    Default = false,
     Callback = function(Value)
         antifling = Value
     end 
@@ -98,7 +98,7 @@ local Toggle = Tabs.Antifling:AddToggle("Method2Antifling",
 {
     Title = "Method 2 Antifling", 
     Description = "Different to the main method, Freezes you in place to avoid being flung or ragdolled. Doesn't avoid insta-kill gloves.",
-    Default = false
+    Default = false,
     Callback = function(Value)
         method2 = Value
     end 
@@ -107,7 +107,7 @@ local Toggle = Tabs.Antifling:AddToggle("TPUP",
 {
     Title = "(METHOD 2 FEATURE) Teleport Up", 
     Description = "Teleports you up when you get hit, to avoid being spam hit.",
-    Default = false
+    Default = false,
     Callback = function(Value)
         tpupav = Value
     end 
@@ -116,7 +116,7 @@ local Toggle = Tabs.Antifling:AddToggle("ExtraSafe",
 {
     Title = "(METHOD 2 FEATURE) Extra Safe++", 
     Description = "Anchors your rootpart for a small amount of time after you become unragdolled, to try and kill any momentum.",
-    Default = false
+    Default = false,
     Callback = function(Value)
         extrasafe = Value
     end 
