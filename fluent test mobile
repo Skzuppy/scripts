@@ -19,7 +19,7 @@ local Tabs = {
     Antifling = Window:AddTab({ Title = "AntiFling", Icon = "wind" }),
     Antivoid = Window:AddTab({ Title = "Anti Void", Icon = "running" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "hammer" }),
-    Changelog = Window:AddTab({ Title = "Changelog", Icon = "clipboard" })
+    Changelog = Window:AddTab({ Title = "Changelog", Icon = "clipboard"})
 }
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -217,14 +217,15 @@ Tabs.Misc:AddButton({
 })
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Tabs.Changelog:AddParagraph({"1/09/24","added new aura option and staff detection"})
-Tabs.Changelog:AddParagraph({"1/09/24","decreased aura range (game limits)"}) 
-Tabs.Changelog:AddParagraph({"1/09/24","forgehub is BACK"}) 
-Tabs.Changelog:AddParagraph({"28/04/24","New hitreg checks"}) 
-Tabs.Changelog:AddParagraph({"25/03/24","Added some aura checks to avoid hitting players who wouldnt be ragdolled even if you hit them"}) 
-Tabs.Changelog:AddParagraph({"23/03/24","Tempoarily removed 'Attack whilst not holding glove' toggle"}) 
-Tabs.Changelog:AddParagraph({"23/03/24","Fixed checks for slapaura"}) 
-Tabs.Changelog:AddParagraph({""}) 
-Tabs.Changelog:AddParagraph({"This UI is apart of Forge Hub as of 22/04/24"}) 
-Tabs.Changelog:AddParagraph({"23/03/24","Report all bugs to skupp_y on Discord or on the V3RM thread"}) 
-Tabs.Changelog:AddParagraph({"23/03/24","OFFICIAL RELEASE"})
+Tabs.Changelog:AddParagraph({Title = "1/09/24", Content = "added new aura option and staff detection"})
+Tabs.Changelog:AddParagraph({Title = "1/09/24", Content = "decreased aura range (game limits)"})
+Tabs.Changelog:AddParagraph({Title = "1/09/24", Content = "forgehub is BACK"})
+Tabs.Changelog:AddParagraph({Title = "28/04/24", Content = "New hitreg checks"})
+Tabs.Changelog:AddParagraph({Title = "25/03/24", Content = "Added some aura checks to avoid hitting players who wouldn't be ragdolled even if you hit them"})
+Tabs.Changelog:AddParagraph({Title = "23/03/24", Content = "Temporarily removed 'Attack whilst not holding glove' toggle"})
+Tabs.Changelog:AddParagraph({Title = "23/03/24", Content = "Fixed checks for slapaura"})
+Tabs.Changelog:AddParagraph({Title = "", Content = ""})
+Tabs.Changelog:AddParagraph({Title = "22/04/24", Content = "This UI is a part of Forge Hub as of 22/04/24"})
+Tabs.Changelog:AddParagraph({Title = "23/03/24", Content = "Report all bugs to skupp_y on Discord or on the V3RM thread"})
+Tabs.Changelog:AddParagraph({Title = "23/03/24", Content = "OFFICIAL RELEASE"})
+
